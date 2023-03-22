@@ -1,25 +1,28 @@
 import { useNavigation } from "@react-navigation/native";
-import { Pressable } from "react-native";
 import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
-const Untitled1 = () => {
+const Untitled1 = ({
+  route
+}) => {
+  const {
+    parameter_test = 1
+  } = route.params || {};
   const navigation = useNavigation();
   return <SafeAreaView style={styles.safeArea}>
-        <Pressable onPress={() => {
-      navigation.navigate("Terms and Conditions");
-    }}><ScrollView contentContainerStyle={{
-        backgroundColor: '#f0f0f1',
-        padding: 10,
-        position: 'relative',
-        flex: 1
-      }} style={styles.AysmVStU}></ScrollView></Pressable>
+        <ScrollView contentContainerStyle={{
+      backgroundColor: '#f0f0f1',
+      padding: 10,
+      position: 'relative',
+      flex: 1
+    }} style={styles.AysmVStU}></ScrollView>
     </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: '100%'
+    height: '100%',
+    backgroundColor: "#f10a0a"
   },
   AysmVStU: {
     borderRadius: 62,
